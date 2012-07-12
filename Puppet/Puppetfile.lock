@@ -1,8 +1,12 @@
 FORGE
   remote: http://forge.puppetlabs.com
   specs:
+    puppetlabs/ntp (0.0.4)
+      puppetlabs/stdlib (>= 0.1.6)
+    puppetlabs/stdlib (2.3.3)
     thias/php (0.2.1)
 
 DEPENDENCIES
+  puppetlabs/ntp (>= 0)
   thias/php (>= 0)
 

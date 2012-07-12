@@ -11,9 +11,11 @@ class httpd {
   }
 
   file { "/etc/httpd/conf.d/vhost.conf":
-    ensure => "present",
+    replace => "no",
+    ensure  => "present",
     source => [
         "puppet:///files/httpd/vhosts.conf",
     ],
+    mode    => 644,
   }
 }
