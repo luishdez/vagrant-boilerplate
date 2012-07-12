@@ -1,0 +1,5 @@
+forge "http://forge.puppetlabs.com"
+
+# http://forge.puppetlabs.com/thias/php
+# https://github.com/thias/puppet-modules/tree/master/modules
+mod "thias/php"

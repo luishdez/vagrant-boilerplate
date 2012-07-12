@@ -1,0 +1,8 @@
+FORGE
+  remote: http://forge.puppetlabs.com
+  specs:
+    thias/php (0.2.1)
+
+DEPENDENCIES
+  thias/php (>= 0)
+
