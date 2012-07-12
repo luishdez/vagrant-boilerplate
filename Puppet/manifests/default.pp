@@ -26,11 +26,5 @@ node default {
         }
     }
 
-    php::ini { '/etc/httpd/conf/php.ini':
-        date_timezone  => 'Europe/Madrid',
-        display_errors => 'Off',
-        memory_limit   => '256M',
-    }
-
-    class { 'php::mod_php5': inifile => '/etc/httpd/conf/php.ini' }
+    class { 'php::mod_php5': inifile => '/etc/php.ini' }
 }
