@@ -2,24 +2,26 @@
 #
 #
 class basic {
-  $basicPackages = [
-    "git",
-    "ntp",
-    "PackageKit-cron"
-  ]
 
-  package { $basicPackages: 
-    ensure => "present" 
-  }
+    $basicPackages = [
+        "git", "ntp", "PackageKit-cron"
+    ]
 
-  service { 'ntpd':
-    ensure    => running,
-    enable    => true,
-    subscribe => Package['ntp'],
-  }
+    package { $basicPackages: 
+        ensure => "present" 
+    }
 
-  service { 'crond':
-    ensure    => running,
-    enable    => true
-  }
+    service { 'ntpd':
+        ensure    => running,
+        enable    => true,
+        require => Package['PackageKit-cron'],
+        subscribe => Package['ntp'],
+    }
+
+    service { 'crond':
+        ensure  => running,
+        enable  => true,
+        require => Package['PackageKit-cron'],
+        subscribe => Package['ntp'],    
+    }
 }
