@@ -2,10 +2,6 @@
 #
 #
 class basic {
-  group { "puppet":
-    ensure => "present",
-  }
-
   $basicPackages = [
     "git",
     "ntp",
@@ -16,12 +12,14 @@ class basic {
     ensure => "present" 
   }
 
-  $basicServices = [ 
-    "ntpd",
-    "crond"
-  ]
+  service { 'ntpd':
+    ensure    => running,
+    enable    => true,
+    subscribe => Package['ntp'],
+  }
 
-  service { $basicServices:
-    enable => true,
+  service { 'crond':
+    ensure    => running,
+    enable    => true
   }
 }
