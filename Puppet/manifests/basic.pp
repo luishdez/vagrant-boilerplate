@@ -19,9 +19,9 @@ class basic {
     }
 
     service { 'crond':
-        ensure  => running,
-        enable  => true,
-        require => Package['PackageKit-cron'],
+        ensure    => running,
+        enable    => true,
+        require   => Package['PackageKit-cron'],
         subscribe => Package['ntp'],    
     }
 }
