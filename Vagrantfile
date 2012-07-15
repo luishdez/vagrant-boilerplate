@@ -14,14 +14,14 @@ Vagrant::Config.run do |config|
   #config.vm.network :hostonly, "192.168.33.10"
   config.vm.forward_port 80, 8080
 
-  config.vm.share_folder "app-name", "/var/www/vhosts", ".", :nfs => false 
-
   config.vm.provision :puppet, 
       :module_path => "Puppet/modules",
       :options => ["--fileserverconfig=/vagrant/PuppetRemote/conf/fileserver.conf", ] do |puppet|
-    puppet.manifests_path = "PuppetRemote/manifests"
-    puppet.module_path    = "PuppetRemote/modules"
+    puppet.manifests_path = "Puppet/manifests"
+    puppet.module_path    = "Puppet/modules"
     puppet.manifest_file  = "default.pp"
   end
+
+  config.vm.share_folder "app-name", "/var/www/vhosts/default/hostname.dev/httpdocs", ".", :nfs => false 
 
 end

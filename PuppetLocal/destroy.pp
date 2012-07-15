@@ -1,0 +1,1 @@
+host { 'web.mobiadvanced.dev': ip => '10.10.10.10', ensure => 'absent',}
