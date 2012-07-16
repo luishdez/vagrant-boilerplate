@@ -12,7 +12,7 @@ Vagrant::Config.run do |config|
   end
 
   #config.vm.network :hostonly, "192.168.33.10"
-  config.vm.forward_port 80, 8080
+  config.vm.forward_port 80, 80
 
   config.vm.provision :puppet, 
       :module_path => "Puppet/modules",
@@ -22,6 +22,6 @@ Vagrant::Config.run do |config|
     puppet.manifest_file  = "default.pp"
   end
 
-  config.vm.share_folder "app-name", "/var/www/vhosts/default/hostname.dev/httpdocs", ".", :nfs => false 
+  config.vm.share_folder "app-name", "/var/www/vhosts/default/localhost.dev/httpdocs", ".", :nfs => false 
 
 end

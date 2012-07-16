@@ -2,6 +2,11 @@
 #
 #
 class repositories {
+
+  # yum clean metadata
+  # yum clean dbcache
+  # yum update
+  
   yumrepo { "remi-test":
     baseurl  => "http://rpms.famillecollet.com/enterprise/6/test/$architecture/",
     descr    => "Remi Test PHP repository",

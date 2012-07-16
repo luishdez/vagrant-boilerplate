@@ -3,4 +3,6 @@
 tmp/
 Puppet/.tmp
 Puppet/modules
+PuppetLocal/modules
+PuppetLocal/.tmp
 modules/
