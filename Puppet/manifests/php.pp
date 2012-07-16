@@ -19,6 +19,9 @@ class php {
 
   package { $phpPackages: 
     ensure  => "installed",
-    require => Yumrepo["remi-test"]
+    require => [
+      Yumrepo["remi-test"]
+    ],
+    notify => Service['httpd'],
   }
 }
