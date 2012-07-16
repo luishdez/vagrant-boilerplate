@@ -1,1 +1,1 @@
-host { 'localhost.dev': ip => '127.0.0.1',}
+host { 'localhost.dev': ip => '192.168.33.10',}

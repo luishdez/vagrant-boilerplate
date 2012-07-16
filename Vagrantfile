@@ -11,8 +11,8 @@ Vagrant::Config.run do |config|
     vm.memory_size = 1024
   end
 
-  #config.vm.network :hostonly, "192.168.33.10"
-  config.vm.forward_port 80, 80
+  config.vm.network :hostonly, "192.168.33.10"
+  #config.vm.forward_port 80, 80
 
   config.vm.provision :puppet, 
       :module_path => "Puppet/modules",

@@ -6,9 +6,11 @@ node default {
   include httpd
 
   service { 'iptables':
-    ensure    => 'stopped',
-    enable    => false,
+    ensure => 'stopped',
+    enable => false,
   }
 
-  httpd::vhost::add { 'localhost.vhost': }
+  httpd::vhost::add { 'localhost.vhost':
+    ip => '192.168.33.10',
+  }
 }
