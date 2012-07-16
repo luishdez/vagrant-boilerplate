@@ -1,0 +1,18 @@
+GIT
+  remote: git://github.com/aggressivex/puppet-httpd.git
+  ref: master
+  sha: fd869bd13564c5812e35ea0fff1131b1fce865aa
+  specs:
+    httpd (0.0.1)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-firewall.git
+  ref: master
+  sha: 9a127ea55101d6c836ac1e8c5331d706c1d1fd59
+  specs:
+    firewall (0.0.1)
+
+DEPENDENCIES
+  firewall (>= 0)
+  httpd (>= 0)
+

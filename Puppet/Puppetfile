@@ -1,9 +1,10 @@
 forge "http://forge.puppetlabs.com"
 
-mod 'puppetlabs/firewall'
+mod 'firewall',
+    :git => 'git://github.com/puppetlabs/puppetlabs-firewall.git'
 
-# mod 'ntp',
-#   :git => 'git://github.com/puppetlabs/puppetlabs-ntp.git'
+mod 'httpd',
+    :git => 'git://github.com/aggressivex/puppet-httpd.git'
 
 # mod 'apt',
 #   :git => 'https://github.com/puppetlabs/puppetlabs-apt.git',
