@@ -10,7 +10,7 @@ node default {
     enable => false,
   }
 
-  httpd::vhost::add { 'localhost.vhost':
+  httpd::vhost::add { 'localhost.dev':
     ip => '192.168.33.10',
   }
 }
