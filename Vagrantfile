@@ -12,7 +12,6 @@ Vagrant::Config.run do |config|
   end
 
   config.vm.network :hostonly, "192.168.33.10"
-  #config.vm.forward_port 80, 80
 
   config.vm.provision :puppet, 
       :module_path => "Puppet/modules",
