@@ -1,6 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+require 'Vagrant/vagrant-puppet-local/lib/puppet-local'  
+
 Vagrant::Config.run do |config|
 
   config.vm.box     = "CentOS-6.3-x86_64-minimal"
@@ -12,6 +14,9 @@ Vagrant::Config.run do |config|
   end
 
   config.vm.network :hostonly, "192.168.33.10"
+
+  config.puppet_local.puppet_destroy_path = 'Puppet/manifests/vagrant/destroy.pp'
+  config.puppet_local.puppet_up_path      = 'Puppet/manifests/vagrant/up.pp'
 
   config.vm.provision :puppet, 
       :module_path => "Puppet/modules",
