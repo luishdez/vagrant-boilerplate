@@ -7,7 +7,7 @@ enviroment, which contains the next setup:
     - Apache2
     - PHP 5.4.4
 
-## Install ready to go.
+## An install ready to go.
 
     git clone git@github.com:aggressivex/vagrant-php-environment.git MyProject
     cd MyProject/Puppet
@@ -17,12 +17,10 @@ enviroment, which contains the next setup:
 
 ### The librarian
 
-To manage puppet modules it uses the librarian-puppet gem
+To manage the puppet modules, it uses the librarian-puppet gem
 [https://github.com/rodjek/librarian-puppet](https://github.com/rodjek/librarian-puppet) 
 
-    sudo gem install librarian-puppet # if not installed
-    librarian-puppet install # in the same path of the Puppetfile, see the 
-    install ready to go example
+    sudo gem install librarian-puppet # To install
 
 ### VM provision
 
