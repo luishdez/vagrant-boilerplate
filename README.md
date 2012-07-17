@@ -47,7 +47,7 @@ in your browser by default.
 
 Requires puppet in local. 
 
-Delete the config if from the Vagrantfile if you don't want this.
+Delete the config lines from the Vagrantfile if you don't want this.
 
 ## Copyright and License
 
