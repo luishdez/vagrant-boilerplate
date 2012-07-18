@@ -10,11 +10,14 @@ environment, which contains the next setup:
 
 ## An install ready to go.
 
-    git clone git@github.com:aggressivex/vagrant-php-environment.git MyProject
-    cd MyProject/Puppet
-    librarian-puppet install
-    cd ..
-    vagrant up
+Copy and paste the whole snippet! you need Vagrant, VirtualBox and Puppet to 
+run this.
+
+    git clone git@github.com:aggressivex/vagrant-startup-environment.git MyProject &&
+    cd MyProject/Puppet &&
+    librarian-puppet install &&
+    cd .. &&
+    vagrant up &&
     echo 'Luis say hello!' > index.html
 
 open your browser [http://localhost.dev](http://localhost.dev)

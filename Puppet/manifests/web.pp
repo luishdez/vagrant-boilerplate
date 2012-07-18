@@ -1,5 +1,5 @@
 # manifest/web.pp
-node web {
+node default {
 
   include repositories
   include basic
