@@ -1,11 +1,12 @@
-# Vagrant php environment
+# Vagrant Startup Environment
 
 This repository provides for a simple [vagrant](http://vagrantup.com/) 
-enviroment, which contains the next setup:
+environment, which contains the next setup:
 
-    - CentOS x86_64 6.3 minimal + Erb + Puppet
-    - Apache2
-    - PHP 5.4.4
+    web node:
+        - CentOS x86_64 6.3 minimal + Erb + Puppet
+        - Apache2
+        - PHP 5.4.4
 
 ## An install ready to go.
 
@@ -14,6 +15,9 @@ enviroment, which contains the next setup:
     librarian-puppet install
     cd ..
     vagrant up
+    echo 'Luis say hello!' > index.html
+
+open your browser [http://localhost.dev](http://localhost.dev)
 
 ### The librarian
 
