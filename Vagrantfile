@@ -1,8 +1,7 @@
 require 'Vagrant/vagrant-puppet-local/lib/puppet-local'  
 
-Vagrant::Config.run do |config|
+Vagrant::Config.run do |web_config|
 
-  config.vm.define :web do |web_config|
     web_config.vm.box     = "CentOS-6.3-x86_64-minimal"
     web_config.vm.box_url = "https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box"
 
@@ -25,6 +24,5 @@ Vagrant::Config.run do |config|
       puppet.module_path    = "Puppet/modules"
       puppet.manifest_file  = "web.pp"
     end
-  end
 
 end

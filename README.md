@@ -18,9 +18,16 @@ run this.
     librarian-puppet install &&
     cd .. &&
     vagrant up &&
-    echo 'Luis say hello!' > index.html
+    echo 'Luis says hello!' > index.html
 
 open your browser [http://localhost.dev](http://localhost.dev)
+
+## VM Nodes availables
+
+The vagrant file contains a serie of nodes defined that you can uncomment to 
+enable
+
+    - web [Apache, PHP]
 
 ### The librarian
 
