@@ -2,7 +2,3 @@ forge "http://forge.puppetlabs.com"
 
 mod 'httpd',
     :git => 'git://github.com/aggressivex/puppet-httpd.git'
-
-# mod 'apt',
-#   :git => 'https://github.com/puppetlabs/puppetlabs-apt.git',
-#   :ref => 'feature/master/dans_refactor'
