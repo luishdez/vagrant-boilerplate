@@ -5,14 +5,14 @@ class nodejs {
 
   package { 'nodejs': 
     ensure => "present",
-    require => Yumrepo["remi-test"],
+    require => Yumrepo["nodejs-stable"],
   }
 
   package { 'npm': 
     ensure => "present",
     require => [
       Package["nodejs"],
-      Yumrepo["remi-test"]
+      Yumrepo["nodejs-stable"]
     ]
   }
 
