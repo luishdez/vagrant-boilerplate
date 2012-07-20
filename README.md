@@ -5,8 +5,9 @@ environment, which contains the next setup:
 
     web node:
         - CentOS x86_64 6.3 minimal + Erb + Puppet
-        - Apache2
+        - Httpd (Apache2)
         - PHP 5.4.4
+        - PCRE 8.12 update
 
 ## An install ready to go.
 
