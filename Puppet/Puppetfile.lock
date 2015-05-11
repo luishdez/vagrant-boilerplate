@@ -1,9 +1,0 @@
-GIT
-  remote: git://github.com/aggressivex/puppet-httpd.git
-  ref: master
-  sha: 1e72cc0c774faac6a57122d3a0ae1cf19ce86676
-  specs:
-    httpd (0.0.1)
-
-DEPENDENCIES
-  httpd (>= 0)

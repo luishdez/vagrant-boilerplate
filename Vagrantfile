@@ -1,28 +1,35 @@
-require 'Vagrant/vagrant-puppet-local/lib/puppet-local'  
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
-Vagrant::Config.run do |web_config|
+Vagrant.configure("2") do |config|
 
-    web_config.vm.box     = "CentOS-6.3-x86_64-minimal"
-    web_config.vm.box_url = "https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box"
+  # Box definition
+  config.vm.box = "CentOS-6.6-x86_64-v20150426"
+  config.vm.box_url = "https://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.6-x86_64-v20150426.box"
 
-    web_config.vm.customize do |vm|
-      vm.name        = "app-name"    
-      vm.memory_size = 1024
-    end
+  # Customs for virtualBox
+  config.vm.provider "virtualbox" do |v|
+    v.auto_nat_dns_proxy = false
+    v.customize ["modifyvm", :id, "--memory", 3048, "--cpus", 4]
+    v.customize ["modifyvm", :id, "--natdnsproxy1", "off" ]
+    v.customize ["modifyvm", :id, "--natdnshostresolver1", "off" ]
+    v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/app", "1"]
+  end
 
-    web_config.vm.network :hostonly, "192.168.33.10"
-    web_config.vm.share_folder "app-name", "/var/www/vhosts/default/localhost.dev/httpdocs", ".", :nfs => false 
+  # VM definition
+  config.vm.network :private_network, ip: "192.168.100.210"
 
+  # VM shared folders
+  config.vm.synced_folder "app", "/var/app", nfs: true
 
-    web_config.puppet_local.puppet_destroy_path = 'Puppet/manifests/local/destroy.pp'
-    web_config.puppet_local.puppet_up_path      = 'Puppet/manifests/local/up.pp'
-
-    web_config.vm.provision :puppet, 
-        :module_path => "Puppet/modules",
-        :options => ["--fileserverconfig=/vagrant/PuppetRemote/conf/fileserver.conf", ] do |puppet|
-      puppet.manifests_path = "Puppet/manifests"
-      puppet.module_path    = "Puppet/modules"
-      puppet.manifest_file  = "web.pp"
-    end
-
+  # VM provision by chef
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path    = ["cooknotes", "cookbooks"]
+    chef.data_bags_path    = "cookbags"
+    chef.provisioning_path = "/tmp/vagrant-chef"
+    chef.environments_path = "environments"
+    chef.roles_path        = "roles"
+    chef.environment       = "dev"
+    chef.add_role          "basic"
+  end
 end

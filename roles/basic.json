@@ -1,0 +1,9 @@
+{
+  "name": "basic",
+  "json_class": "Chef::Role",
+  "description": "Application server and Web Server",
+  "chef_type": "role",
+  "run_list": [
+    "git"
+  ]
+}

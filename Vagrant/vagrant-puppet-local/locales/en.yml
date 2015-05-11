@@ -1,9 +1,0 @@
-en:
-  vagrant:
-    plugins:
-      puppet-local:
-        middleware:
-          up:
-            apply_puppet: "Apply up puppet file: %{path}"
-          destroy:
-            apply_puppet: "Apply destroy puppet file: %{path}"
