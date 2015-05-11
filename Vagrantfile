@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
   config.vm.network :private_network, ip: "192.168.100.210"
 
   # VM shared folders
-  config.vm.synced_folder "app", "/var/app", nfs: true
+  config.vm.synced_folder "www", "/var/www", nfs: true
 
   # VM provision by chef
   config.vm.provision :chef_solo do |chef|
